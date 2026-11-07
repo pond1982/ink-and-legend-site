@@ -1,0 +1,62 @@
+:root {
+  --paper: #efe4cc;
+  --paper-deep: #e4d5b4;
+  --ink: #1d1a17;
+  --ink-soft: #4a433b;
+  --red: #a3221a;
+  --rule: rgba(29, 26, 23, 0.18);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image: radial-gradient(ellipse at 50% 0%, #f6eedc 0%, var(--paper) 55%, var(--paper-deep) 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+}
+a { color: var(--red); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+header.site {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 0; border-bottom: 1px solid var(--rule);
+}
+header.site .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+header.site .brand img { width: 40px; height: 40px; border-radius: 10px; }
+header.site .brand span { font-family: "Zen Antique", serif; font-size: 22px; letter-spacing: 0.04em; }
+header.site nav { display: flex; gap: 18px; flex-wrap: wrap; }
+header.site nav a { color: var(--ink); text-decoration: none; font-size: 16px; letter-spacing: 0.06em; }
+header.site nav a[aria-current="page"] { color: var(--red); }
+h1, h2, h3 { font-family: "Zen Antique", serif; font-weight: 400; line-height: 1.25; letter-spacing: 0.02em; }
+h1 { font-size: clamp(30px, 6vw, 44px); margin: 40px 0 8px; }
+h2 { font-size: 26px; margin: 40px 0 8px; }
+h3 { font-size: 20px; margin: 28px 0 4px; }
+.lede { color: var(--ink-soft); font-size: 19px; }
+.hero { text-align: center; padding: 28px 0 8px; }
+.hero .logo { width: min(520px, 92%); height: auto; }
+.hero .tag { font-size: 20px; color: var(--ink-soft); margin: 6px 0 24px; }
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.shots img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 10px 30px rgba(29, 26, 23, 0.25); }
+.badge {
+  display: inline-block; padding: 12px 22px; border: 2px solid var(--ink); border-radius: 999px;
+  color: var(--ink); text-decoration: none; font-family: "Zen Antique", serif; font-size: 18px; letter-spacing: 0.05em;
+}
+.badge:hover { background: var(--ink); color: var(--paper); }
+.seal { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--red); margin-right: 10px; vertical-align: middle; }
+ul.points { padding-left: 0; list-style: none; }
+ul.points li { padding: 6px 0 6px 28px; position: relative; }
+ul.points li::before { content: ""; position: absolute; left: 4px; top: 18px; width: 10px; height: 10px; border-radius: 50%; background: var(--red); }
+.card { background: rgba(255, 255, 255, 0.35); border: 1px solid var(--rule); border-radius: 14px; padding: 6px 22px 16px; margin: 20px 0; }
+dl.faq dt { font-family: "Zen Antique", serif; font-size: 19px; margin-top: 22px; }
+dl.faq dd { margin: 4px 0 0; color: var(--ink-soft); }
+footer.site { border-top: 1px solid var(--rule); margin-top: 56px; padding: 22px 0 40px; font-size: 15px; color: var(--ink-soft); }
+footer.site nav { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 8px; }
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .shots { grid-template-columns: 1fr; }
+  header.site { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
